@@ -1,15 +1,6 @@
 import { useState, useEffect } from 'react';
-
-//components
-import Logo from './components/Logo/Logo';
-import Wrapper from './components/Wrapper';
-import Filter from './components/Filter';
-
 //data
 import jsonData from './data/myData.json';
-
-//styles
-import './App.css';
 
 function App() {
 	const [activeFiltersList, setActiveFiltersList] = useState([]); // checkboxes
@@ -82,14 +73,50 @@ function App() {
 
 	return (
 		<div className='App'>
-			<Logo />
-			<Wrapper>
-				<Filter
-					numOfRecords={numOfRecords}
-					checkboxHandler={checkboxHandler}
-					companyData={companyData}
+			<h3>Number of Records: {numOfRecords}</h3>
+			<label htmlFor='oneWorld'>
+				<input
+					name='OW'
+					type='checkbox'
+					value='OW'
+					onClick={checkboxHandler}
 				/>
-			</Wrapper>
+				One World
+			</label>
+			<label htmlFor='oneWorld'>
+				<input
+					name='ST'
+					type='checkbox'
+					value='ST'
+					onClick={checkboxHandler}
+				/>{' '}
+				Sky Team
+			</label>
+			<label htmlFor='oneWorld'>
+				<input
+					name='SA'
+					type='checkbox'
+					value='SA'
+					onClick={checkboxHandler}
+				/>{' '}
+				Star Alliance
+			</label>
+
+			<ul>
+				{companyData.map((obj, i) => {
+					return (
+						<li key={i}>
+							{obj.name}
+							{obj.site}
+						</li>
+					);
+				})}
+				{/* {filteredData === undefined
+					? filteredData.map((obj, i) => {
+							return <li key={i}>{obj.name}</li>;
+					  })
+					: 'no data'} */}
+			</ul>
 		</div>
 	);
 }

@@ -1,0 +1,19 @@
+.filter-header {
+	/* margin: 67px 0 0; */
+	margin: 0px;
+	padding-top: 67px;
+	font-size: 44px;
+	font-weight: 900;
+	color: var(--font-black-total);
+}
+
+.filter-subheader {
+	margin: 73px 0 0;
+	font-size: 1rem;
+	font-weight: bold;
+	color: var(--font-black-800);
+}
+
+.checkbox-wrapper {
+	margin: 23px 0 56px;
+}

@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+:root {
+	font-size: 1rem;
+	box-sizing: border-box;
+
+	/*fonts colors*/
+	--font-black-total: #000000;
+	--font-black-800: #192024;
+	--font-grey: #5a6872;
+
+	--checkbox-label-margins: 0 0.75em 0 0.312em; /* 50% */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Responsive Mockup Photo shows these as shrinking, specification not provided */
+@media (min-width: 800px) {
+	:root {
+		--checkbox-label-margins: 0 1.05em 0 0.437em; /* 70% */
+	}
+}
+@media (min-width: 1200px) {
+	:root {
+		--checkbox-label-margins: 0 1.5em 0 0.625em;
+	}
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*,
+::before,
+::after {
+	box-sizing: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+	margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+	font-family: HelveticaNeue, Arial, sans-serif;
+	line-height: 1.4;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Flex Layout */
+.flexStart {
+	display: flex;
+	justify-content: flex-start;
+}
+.flexCenter {
+	display: flex;
+	justify-content: center;
+}
+.flexVerticalCenter {
+	display: flex;
+	align-items: center;
+}
+
+.flexInner {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	border: 1px solid red;
+	align-items: center;
 }
